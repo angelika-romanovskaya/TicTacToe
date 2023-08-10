@@ -1,13 +1,17 @@
 body{
     margin: 0;
     padding: 0;
+    height: 100vh;
     background-color: azure;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrap {
-    margin: 0 auto;
-    margin-top: 50px;
-    max-width: 70%;
+    margin-top: 10px;
+    width: 70%;
     border: 1px solid rgb(18, 85, 63);
 }
 
@@ -30,6 +34,7 @@ body{
     font-weight: bold;
     font-size: 35px;
     text-align: center;
+    margin: 0;
 }
 
 .main_results {
@@ -43,11 +48,6 @@ body{
     color: rgb(10, 187, 49);
 }
 
-.main_draw {
-    font-weight: bold;
-    font-size: 35px;
-}
-
 .main_o {
     color: rgb(203, 10, 10);
     font-weight: bold;
@@ -59,12 +59,11 @@ body{
     padding: 30px 0;
     width: max-content;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,100px);
+    grid-template-rows: repeat(3,100px);
 }
 
 .game_item {
-    width: 100px;
-    height: 100px;
     border-collapse: collapse;
     border: 1px solid black;
     display: flex;
@@ -72,9 +71,18 @@ body{
     align-items: center;
 }
 
-.btn{
+.button{
     margin: 0 auto;
-    padding: 10px 40px;
+    max-width: 300px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn{
+    flex: 1 1;
+    white-space: nowrap;
+    margin: 0 auto;
+    padding: 10px 0;
     font-size: 16px;
     background-color: rgb(18, 85, 63);
     color: white;
@@ -82,4 +90,34 @@ body{
     display: block;
     text-transform: uppercase;
     font-weight: bold;
+}
+
+.win{
+    font-size: 100px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    text-transform: uppercase;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .game {
+        grid-template-columns: repeat(3,50px);
+        grid-template-rows: repeat(3,50px);
+    }
+
+    .win{
+        font-size: 50px;
+    }
+
+    .button{
+        flex-direction: column;
+    }
+
+    .btn{
+        width: 70%;
+    }
 }
