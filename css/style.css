@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-color: azure;
+    background-color: rgb(215, 249, 249);
     position: relative;
     display: flex;
     justify-content: center;
@@ -13,6 +13,7 @@ body{
     margin-top: 10px;
     width: 70%;
     border: 1px solid rgb(18, 85, 63);
+    background-color: white;
 }
 
 .header {
